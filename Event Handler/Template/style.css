@@ -1,0 +1,44 @@
+html, body{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+.root{
+	padding: 20px;
+}
+
+#input-field{
+	width: 80%;
+	height: 40px;
+	box-sizing: border-box;
+}
+
+#button{
+	width: calc(20% - 5px);;
+	height: 40px;
+	box-sizing: border-box;
+}
+
+#box{
+	background-color: rgb(230, 230, 230);
+	min-height: 500px;
+	margin: 10px 0;
+	position: relative;
+}
+
+#display-text{
+	margin: 0;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.has-text{
+	color: #4b4b4b;
+}
+
+.empty-text{
+	color: #afafaf;
+}
