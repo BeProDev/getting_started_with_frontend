@@ -2,32 +2,38 @@
 <html>
 <head>
 	<title>BeProDev</title>
+	<script type="text/javascript">
+		const loggedInUserData = JSON.parse(localStorage.getItem('loggedInUser'));
+		if(!!loggedInUserData) 
+			window.location = 'file:///C:/Users/adnan/OneDrive/Desktop/getting_started_with_frontend/Project/Completed/dashboard.html';
+	</script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 	<div class="main">
-		<div id="login" class="auth-form border-orange">
+		<div id="login" class="auth-form border-orange display-none">
 			<h1 class="form-title color-orange">Login</h1>
-			<form>
+			<form id="login-form">
 				<div class="form-input">
 					<label for="username">Username:</label><br>
-					<input type="text" name="username" placeholder="Enter your username">
+					<input type="text" name="username" placeholder="Enter your username" required>
 				</div>
 				<div class="form-input">
 					<label for="password">Password:</label><br>
-					<input type="password" name="password" placeholder="Enter your password">
+					<input type="password" name="password" placeholder="Enter your password" required>
 				</div>
+				<p class="error-message"></p>
 				<div class="buttons">
-					<button class="button" type="submit">Login</button>
+					<button class="button" type="button">Login</button>
 					<p>To register <span class="color-blue click-here-button">click here</span></p>
 				</div>
 			</form> 
 		</div>
 
-		<div id="register" class="auth-form display-none">
+		<div id="register" class="auth-form">
 			<h1 class="form-title color-blue">Register</h1>
-			<form>
+			<form id="register-form">
 				<div class="form-input">
 					<label for="username">Full Name:</label><br>
 					<input type="text" name="name" placeholder="Enter your full name">
@@ -38,11 +44,16 @@
 					<input type="text" name="username" placeholder="Enter your username">
 				</div>
 				<div class="form-input">
+					<label for="email">Email:</label><br>
+					<input type="email" name="email" placeholder="Enter your email">
+				</div>
+				<div class="form-input">
 					<label for="password">Password:</label><br>
 					<input type="password" name="password" placeholder="Enter your password">
 				</div>
+				<p class="error-message"></p>
 				<div class="buttons">
-					<button class="button" type="submit">Register</button>
+					<button class="button" type="button">Register</button>
 					<p>To login <span class="color-orange click-here-button">click here</span></p>
 				</div>
 			</form> 
