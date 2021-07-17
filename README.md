@@ -1,5 +1,5 @@
 # Getting started with frontend (Task Repo)
 This repo contains the empty templates and final task of different sections
 
-### Event Handeler Folder
-This folder contains the template and final task of the videos on javascript event handeler
+### Event Handler Folder
+This folder contains the template and final task of the videos on javascript event handler
