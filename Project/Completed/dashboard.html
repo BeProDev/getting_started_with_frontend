@@ -2,13 +2,19 @@
 <html>
 <head>
 	<title>Dashboard</title>
+	<script type="text/javascript">
+		const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+		if(!loggedInUser){
+			window.location = 'file:///C:/Users/adnan/OneDrive/Desktop/getting_started_with_frontend/Project/Practice/index.html';
+		}
+	</script>
 	<link rel="stylesheet" type="text/css" href="dashboard.style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<nav id="nav" class="dark-nav-bg">
+	<nav id="nav" class="no-nav-bg">
 		<ul>
-			<li><a href="#">Log out</a></li>
+			<li><a href="#" onclick="logout()">Log out</a></li>
 			<li><a href="#member-section">Members</a></li>
 			<li><a class="active" href="#dashboard">Home</a></li>
 		</ul>
@@ -16,7 +22,7 @@
 	<div class="main">
 		<div class="dashboard-container">
 			<div class="section dashboard" id="dashboard">
-				<h1 id="greetings">Heeey! <span id="name-display">Adnan</span></h1>
+				<h1 id="greetings">Heeey! <span id="user-display-name">Adnan</span></h1>
 				<h1 id="message">Welcome to Pro Dev Team</h1>
 			</div>
 		</div>
@@ -25,26 +31,11 @@
 			<h1 class="title">Member list</h1>
 			<div class="member-list">
 				<div class="member">
-					<table>
+					<table id="member-list-table">
 					  <tr>
 					    <th style="width: 38%;">Name</th>
 					    <th>Username</th> 
 					    <th style="width: 38%;">Email</th>
-					  </tr>
-					  <tr>
-					    <td>Jill</td>
-					    <td>Smith</td>
-					    <td>50</td>
-					  </tr>
-					  <tr>
-					    <td>Eve</td>
-					    <td>Jackson</td>
-					    <td>94</td>
-					  </tr>
-					  <tr>
-					    <td>John</td>
-					    <td>Doe</td>
-					    <td>80</td>
 					  </tr>
 					</table>
 				</div>
@@ -53,19 +44,5 @@
 	</div>
 
 	<script type="text/javascript" src="dashboard.script.js"></script>
-	<script>
-		window.onscroll = function() {myFunction()};
-
-		var header = document.getElementById("nav");
-		var sticky = header.offsetTop;
-
-		function myFunction() {
-		  // if (window.pageYOffset > sticky) {
-		  //   header.classList.add("sticky");
-		  // } else {
-		  //   header.classList.remove("sticky");
-		  // }
-		}
-	</script>
 </body>
 </html>
